@@ -22,7 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install and test
       run: |
-        cd ~/adamcole123/backend
+        cd ~/blog/backend
         npm install
         npm test
       env:
