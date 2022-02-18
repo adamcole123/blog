@@ -8,7 +8,7 @@ import { TYPES } from './constants/types';
 
 // declare metadata by @controller annotation
 import "./entrypoint/controllers/BlogController";
-import BlogRepository from './infrastructure/FakeBlogRepository';
+import BlogRepository from './infrastructure/FakeBlogReadOnlyRepository';
 import { Container } from 'inversify';
 
 // set up container
