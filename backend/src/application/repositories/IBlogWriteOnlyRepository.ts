@@ -1,5 +1,5 @@
 import IBlogDto from "../../usecase/Blogs/IBlogDto";
 
-export default interface IBlogReadOnlyRepository {
+export default interface IBlogWriteOnlyRepository {
 	create(blog: IBlogDto): Promise<IBlogDto>
 }

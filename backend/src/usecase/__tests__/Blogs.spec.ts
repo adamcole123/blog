@@ -13,8 +13,7 @@ import FakeBlogWriteOnlyRepository from "../../infrastructure/FakeBlogWriteOnlyR
 let blogReadOnlyRepository: IBlogReadOnlyRepository = new FakeBlogReadOnlyRepository();
 let blogWriteOnlyRepository: IBlogWriteOnlyRepository = new FakeBlogWriteOnlyRepository();
 
-describe('Blog Use Cases', () => {
-	
+describe('Blog use cases', () => {	
 	it('RetrieveBlogUseCase', async () => {
 		// Arrange
 		let retrieveBlogUseCase: IRetrieveBlogUseCase;
