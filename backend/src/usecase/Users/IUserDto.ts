@@ -3,6 +3,5 @@ export default interface IUserDto {
 	username: string,
 	password: string,
 	name: string,
-	email: string,
-	jwt?: string
+	email: string
 }

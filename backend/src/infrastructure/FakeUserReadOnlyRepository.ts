@@ -11,13 +11,23 @@ export default class FakeUserReadOnlyRepository implements IUserReadOnlyReposito
 		throw new Error('Method not implemented.');
 	}
 	fetch(userDto: IUserDto): Promise<IUserDto> {
-		return new Promise((resolve, reject) => {
+		return new Promise(async (resolve, reject) => {
 			let foundUser = users.find(x => x.username == userDto.username);
 			
-			if(foundUser)
+			if(!foundUser){
+				reject('Could not find user');
+			} else{
+				let newUserDto: IUserDto = {
+					id: foundUser.id,
+					username: foundUser.username,
+					password: foundUser.password,
+					name: foundUser.name,
+					email: foundUser.email
+				}
+	
 				resolve(foundUser);
-
-			throw new Error('Could not find user');
+			}
+			
 		})
 	}
 }
