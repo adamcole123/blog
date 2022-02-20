@@ -8,8 +8,12 @@ import IBlogWriteOnlyRepository from "../application/repositories/IBlogWriteOnly
 export default class FakeUserWriteOnlyRepository implements IUserWriteOnlyRepository {
 	create(user: IUserDto): Promise<IUserDto> {
 		return new Promise((resolve, reject) => {
+			if(users.find(x => x.username == user.username)){
+				reject('Existing user already has that username')
+			}
+
 			users.push(new User(
-				user.id,
+				`test${users.length + 1}_id`,
 				user.username,
 				bcrypt.hashSync(user.password, bcrypt.genSaltSync(10)),
 				user.name,

@@ -24,7 +24,7 @@ export default class UserSignInUseCase implements IUserSignInUseCase {
 				}
 	
 				let returnObj: IUserDto = {
-					id: foundUser.id,
+					id: '',
 					username: foundUser.username,
 					password: '',
 					name: foundUser.name,
