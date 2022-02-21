@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 
 export default class UserSignInUseCase implements IUserSignInUseCase {
 	userReadOnlyRepository: IUserReadOnlyRepository;
-	bc = bcrypt;
+	private bc = bcrypt;
 
 	/**
 	 *

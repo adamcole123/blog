@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1645327206383" clover="3.2.0">
-  <project timestamp="1645327206383" name="All files">
-    <metrics statements="85" coveredstatements="83" conditionals="5" coveredconditionals="5" methods="31" coveredmethods="29" elements="121" coveredelements="117" complexity="0" loc="85" ncloc="85" packages="4" files="12" classes="12"/>
+<coverage generated="1645380543099" clover="3.2.0">
+  <project timestamp="1645380543099" name="All files">
+    <metrics statements="86" coveredstatements="84" conditionals="5" coveredconditionals="5" methods="31" coveredmethods="29" elements="122" coveredelements="118" complexity="0" loc="86" ncloc="86" packages="4" files="12" classes="12"/>
     <package name="domain">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="Blog.ts" path="D:\Projects\blog\backend\src\domain\Blog.ts">
@@ -25,7 +25,7 @@
       </file>
     </package>
     <package name="infrastructure">
-      <metrics statements="39" coveredstatements="37" conditionals="4" coveredconditionals="4" methods="15" coveredmethods="13"/>
+      <metrics statements="40" coveredstatements="38" conditionals="4" coveredconditionals="4" methods="15" coveredmethods="13"/>
       <file name="FakeBlogData.ts" path="D:\Projects\blog\backend\src\infrastructure\FakeBlogData.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -33,15 +33,16 @@
         <line num="8" count="1" type="stmt"/>
       </file>
       <file name="FakeBlogReadOnlyRepository.ts" path="D:\Projects\blog\backend\src\infrastructure\FakeBlogReadOnlyRepository.ts">
-        <metrics statements="8" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="3"/>
+        <metrics statements="9" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
       </file>
       <file name="FakeBlogWriteOnlyRepository.ts" path="D:\Projects\blog\backend\src\infrastructure\FakeBlogWriteOnlyRepository.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>

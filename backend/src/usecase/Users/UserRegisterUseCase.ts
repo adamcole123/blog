@@ -5,7 +5,7 @@ import IUserWriteOnlyRepository from '../../application/repositories/IUserWriteO
 
 export default class UserSignInUseCase implements IUserRegisterUseCase {
 	userWriteOnlyRepository: IUserWriteOnlyRepository;
-	bc = bcrypt;
+	private bc = bcrypt;
 
 	/**
 	 *

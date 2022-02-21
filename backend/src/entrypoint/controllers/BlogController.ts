@@ -5,19 +5,19 @@ import BlogServiceLocator from '../../configuration/usecases/BlogServiceLocator'
 import * as express from "express";
 import { TYPES } from "../../constants/types";
 import IBlogDto from '../../usecase/Blogs/IBlogDto';
-import IRetrieveMultipleBlogsUseCase from "../../usecase/Blogs/IRetrieveMultipleBlogsUseCase";
+import IRetrieveAllBlogsUseCase from "../../usecase/Blogs/IRetrieveAllBlogsUseCase";
 
 @controller('/blog')
 export default class BlogController implements interfaces.Controller {
 	private readonly retrieveBlogUseCase: IRetrieveBlogUseCase;
-	private readonly retrieveMultipleBlogsUseCase: IRetrieveMultipleBlogsUseCase;
+	private readonly retrieveAllBlogsUseCase: IRetrieveAllBlogsUseCase;
 	
 	constructor(@inject(TYPES.BlogServiceLocator) serviceLocator: BlogServiceLocator){
 		this.retrieveBlogUseCase = serviceLocator.GetRetrieveBlogUseCase();
-		this.retrieveMultipleBlogsUseCase = serviceLocator.GetRetrieveMultipleBlogsUseCase();
+		this.retrieveAllBlogsUseCase = serviceLocator.GetRetrieveMultipleBlogsUseCase();
 	}
 	
-	@httpGet('/')
+	@httpGet('/getOne')
 	public async retrieveBlog(@request() req: express.Request, @response() res: express.Response){
 		let requestBlog: IBlogDto = {
 			id: req.body.id,
@@ -33,11 +33,11 @@ export default class BlogController implements interfaces.Controller {
 			.catch((err: Error) => res.status(400).json({error: err.message}));
 	}
 
-	@httpGet('/')
+	@httpGet('/getAll')
 	public async retrieveBlogs(@request() req: express.Request, @response() res: express.Response){
 		let requestBlogs: IBlogDto[] = req.body;
 
-		return this.retrieveMultipleBlogsUseCase.invoke(requestBlogs)
+		return this.retrieveAllBlogsUseCase.invoke(requestBlogs)
 			.then((foundBlogsDto: IBlogDto[]) => res.status(200).json(foundBlogsDto))
 			.catch((err: Error) => res.status(400).json({error: err.message}));
 	}

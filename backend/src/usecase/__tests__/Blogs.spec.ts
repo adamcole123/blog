@@ -1,6 +1,6 @@
+import "reflect-metadata"
 import { mock } from "jest-mock-extended";
 import IBlogReadOnlyRepository from "../../application/repositories/IBlogReadOnlyRepository";
-import Blog from "../../domain/Blog";
 import IBlogDto from "../Blogs/IBlogDto";
 import IRetrieveBlogUseCase from '../Blogs/IRetrieveBlogUseCase';
 import RetrieveBlogUseCase from "../Blogs/RetrieveBlogUseCase";

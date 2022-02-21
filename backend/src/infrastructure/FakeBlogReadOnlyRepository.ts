@@ -4,10 +4,9 @@ import Blog from '../domain/Blog';
 import blogs from './FakeBlogData';
 import IBlogDto from '../usecase/Blogs/IBlogDto';
 
+@injectable()
 export default class FakeBlogReadOnlyRepository implements IBlogReadOnlyRepository{
 	public async fetchAll(): Promise<Blog[]> {
-		
-
 		return blogs;
 	}
 

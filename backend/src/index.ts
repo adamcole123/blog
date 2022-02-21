@@ -29,5 +29,7 @@ server.setConfig((app: express.Application) => {
 });
 
 let app = server.build();
-app.listen(3000);
+app.listen(8000, () => {
+  console.log('Server listening on port 8000');
+});
 

@@ -1,9 +1,9 @@
 import IBlogReadOnlyRepository from '../../application/repositories/IBlogReadOnlyRepository';
 import IBlogDto from './IBlogDto';
-import IRetrieveMultipleBlogsUseCase from './IRetrieveMultipleBlogsUseCase';
+import IRetrieveAllBlogsUseCase from './IRetrieveAllBlogsUseCase';
 
-export default class RetrieveBlogsUseCase implements IRetrieveMultipleBlogsUseCase{
-	blogsReadOnlyRepository: IBlogReadOnlyRepository;
+export default class RetrieveAllBlogsUseCase implements IRetrieveAllBlogsUseCase{
+	private blogsReadOnlyRepository: IBlogReadOnlyRepository;
 
 	
 	constructor(_blogsReadOnlyRepository: IBlogReadOnlyRepository) {
@@ -11,7 +11,7 @@ export default class RetrieveBlogsUseCase implements IRetrieveMultipleBlogsUseCa
 	}
 
 	invoke(blogDto: IBlogDto[]): Promise<IBlogDto[]> {
-		throw new Error('Method not implemented.');
+		return this.blogsReadOnlyRepository.fetchAll()
 	}
 	
 }
