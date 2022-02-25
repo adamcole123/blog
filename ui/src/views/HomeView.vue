@@ -3,7 +3,7 @@
 <template>
   <main>
     <div v-for="(blog, index) in blogs" :key="index">
-      <h1>{{ blog.title }} </h1>
+      <RouterLink v-bind:to="'/blog/' + blogs[index].id"><h1>{{ blog.title }} </h1></RouterLink>
       <p>{{ blog.body }} </p>
       <b>{{ blog.author}} </b>
     </div>

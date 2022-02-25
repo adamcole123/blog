@@ -17,19 +17,18 @@ export default class BlogController implements interfaces.Controller {
 		this.retrieveAllBlogsUseCase = serviceLocator.GetRetrieveMultipleBlogsUseCase();
 	}
 	
-	@httpGet('/getOne')
+	@httpGet('/getOne/:id')
 	public async retrieveBlog(@request() req: express.Request, @response() res: express.Response){
 		let requestBlog: IBlogDto = {
-			id: req.body.id,
-			title: req.body.title,
-			tags: req.body.tags,
-			author: req.body.author,
-			body: req.body.body,
-			datePublished: req.body.datePublished
+			id: req.params['id'],
+			title: "",
+			author: ""
 		}
 
 		return this.retrieveBlogUseCase.invoke(requestBlog)
-			.then((foundBlogDto: IBlogDto) => res.status(200).json(foundBlogDto))
+			.then((foundBlogDto: IBlogDto) => {
+				res.status(200).json(foundBlogDto)
+			})
 			.catch((err: Error) => res.status(400).json({error: err.message}));
 	}
 
