@@ -3,13 +3,11 @@
 <template>
   <main>
     <h1>{{ blog.title }}</h1>
-    <div>{{ blog.author }}</div>
-    <div>{{ blog.datePublished }}</div>
+    <div>{{ blog.author }} | {{ blog.datePublished }}</div>
     <sub>tags: {{ blog.tags }}</sub>
 	<hr />
 	<br>
-	<br>
-    <div>{{ blog.body }}</div>
+    <pre class="blog-body">{{ blog.body }}</pre>
   </main>
 </template>
 
@@ -53,3 +51,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.blog-body{
+  white-space: pre-wrap;
+}
+</style>

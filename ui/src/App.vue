@@ -3,25 +3,26 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <div>
+    <header>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+        </nav>
+      </div>
+    </header>
 
-  <RouterView />
+    <RouterView/>
+  </div>
 </template>
 
 <style>
 @import "@/assets/base.css";
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
+  min-width: 80%;
   font-weight: normal;
 }
 
@@ -38,8 +39,7 @@ header {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  color: rgb(122, 122, 122);
 }
 
 @media (hover: hover) {
@@ -76,12 +76,9 @@ nav a:first-of-type {
 @media (min-width: 1024px) {
   body {
     display: flex;
-    place-items: center;
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
 }

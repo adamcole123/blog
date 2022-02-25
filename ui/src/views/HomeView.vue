@@ -27,6 +27,10 @@ import axios from 'axios';
     async created() {
       let res = await axios.get('/api/blog/getAll');
       this.blogs = res.data;
+
+      this.blogs.forEach(blog => {
+        blog.body = blog.body.substring(0, 300) + '...';
+      });
     }
   };
 </script>
