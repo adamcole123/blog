@@ -32,7 +32,7 @@ export default {
       },
     };
   },
-  async created() {
+  async beforeCreate() {
     await axios
       .get(`/api/blog/getOne/${this.$route.params.id}`)
       .then((res) => {

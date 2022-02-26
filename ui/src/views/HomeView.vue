@@ -24,7 +24,7 @@ import axios from 'axios';
         blogs: new Array()
       }
     },
-    async created() {
+    async beforeCreate() {
       let res = await axios.get('/api/blog/getAll');
       this.blogs = res.data;
 
